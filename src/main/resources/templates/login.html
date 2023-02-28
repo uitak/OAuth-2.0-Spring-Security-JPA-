@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>로그인</title>
+	</head>
+	
+	<body>
+		<h1>Login</h1>
+		<img th:src="@{/images/Welcome.png}" />
+	
+		<div th:if="${error}">
+			Unable to login. Check your username and password.
+		</div>
+		
+		<div>
+			<a href="/oauth2/authorization/google"> 구글 로그인 </a>
+			<br>
+			<a href="/oauth2/authorization/naver"> 네이버 로그인 </a>
+			<br>
+			<a href="/oauth2/authorization/kakao"> 카카오 로그인 </a>
+			<br>
+		</div>
+		
+		<p>
+			New here? Click <a th:href="@{/register}">here</a> to register.
+		</p>
+	
+		<form method="POST" th:action="@{/login}" id="loginForm">		
+			<label for="username">Username: </label>
+			<input type="text" name="username" id="username" /><br/>
+		
+			<label for="password">Password: </label>
+			<input type="password" name="password" id="password" /><br/>
+		
+			<input type="submit" value="Login"/>
+		</form>
+	</body>
+</html>

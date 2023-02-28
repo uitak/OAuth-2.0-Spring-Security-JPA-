@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Page Title</title>
+</head>
+<body>
+	<form methode="POST" th:action="@{/logout}">
+		<input type="submit" value="Logout"/>
+	</form>
+	<h1>This is a homepage</h1>
+	<img th:src="@{/images/Welcome.png}" width="600" height="400"/>
+</body>
+</html>
